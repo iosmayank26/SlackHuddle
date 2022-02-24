@@ -1,0 +1,679 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5C8356027C621DE000C5E12 /* SlackHuddleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8355F27C621DE000C5E12 /* SlackHuddleApp.swift */; };
+		D5C8356427C621DF000C5E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C8356327C621DF000C5E12 /* Assets.xcassets */; };
+		D5C8356727C621DF000C5E12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C8356627C621DF000C5E12 /* Preview Assets.xcassets */; };
+		D5C8357127C621DF000C5E12 /* SlackHuddleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8357027C621DF000C5E12 /* SlackHuddleTests.swift */; };
+		D5C8357B27C621DF000C5E12 /* SlackHuddleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8357A27C621DF000C5E12 /* SlackHuddleUITests.swift */; };
+		D5C8357D27C621DF000C5E12 /* SlackHuddleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8357C27C621DF000C5E12 /* SlackHuddleUITestsLaunchTests.swift */; };
+		D5C8358B27C62231000C5E12 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8358927C62231000C5E12 /* ContactListView.swift */; };
+		D5C8358C27C62231000C5E12 /* SlackChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8358A27C62231000C5E12 /* SlackChatView.swift */; };
+		D5C8358E27C6223A000C5E12 /* ContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8358D27C6223A000C5E12 /* ContactListCell.swift */; };
+		D5C8359027C62240000C5E12 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8358F27C62240000C5E12 /* UserModel.swift */; };
+		D5C8359227C62AF5000C5E12 /* TokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8359127C62AF5000C5E12 /* TokenProvider.swift */; };
+		D5C8359427C63A4B000C5E12 /* HalfSheetModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8359327C63A4B000C5E12 /* HalfSheetModal.swift */; };
+		D5C8359727C63BCC000C5E12 /* HMSSDK in Frameworks */ = {isa = PBXBuildFile; productRef = D5C8359627C63BCC000C5E12 /* HMSSDK */; };
+		D5C8359D27C77FE0000C5E12 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C8359C27C77FE0000C5E12 /* SheetView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5C8356D27C621DF000C5E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5C8355427C621DE000C5E12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5C8355B27C621DE000C5E12;
+			remoteInfo = SlackHuddle;
+		};
+		D5C8357727C621DF000C5E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5C8355427C621DE000C5E12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5C8355B27C621DE000C5E12;
+			remoteInfo = SlackHuddle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5C8355C27C621DE000C5E12 /* SlackHuddle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackHuddle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C8355F27C621DE000C5E12 /* SlackHuddleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackHuddleApp.swift; sourceTree = "<group>"; };
+		D5C8356327C621DF000C5E12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5C8356627C621DF000C5E12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D5C8356C27C621DF000C5E12 /* SlackHuddleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackHuddleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C8357027C621DF000C5E12 /* SlackHuddleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackHuddleTests.swift; sourceTree = "<group>"; };
+		D5C8357627C621DF000C5E12 /* SlackHuddleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackHuddleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C8357A27C621DF000C5E12 /* SlackHuddleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackHuddleUITests.swift; sourceTree = "<group>"; };
+		D5C8357C27C621DF000C5E12 /* SlackHuddleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackHuddleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D5C8358927C62231000C5E12 /* ContactListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		D5C8358A27C62231000C5E12 /* SlackChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackChatView.swift; sourceTree = "<group>"; };
+		D5C8358D27C6223A000C5E12 /* ContactListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListCell.swift; sourceTree = "<group>"; };
+		D5C8358F27C62240000C5E12 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D5C8359127C62AF5000C5E12 /* TokenProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenProvider.swift; sourceTree = "<group>"; };
+		D5C8359327C63A4B000C5E12 /* HalfSheetModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfSheetModal.swift; sourceTree = "<group>"; };
+		D5C8359C27C77FE0000C5E12 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5C8355927C621DE000C5E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C8359727C63BCC000C5E12 /* HMSSDK in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C8356927C621DF000C5E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C8357327C621DF000C5E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5C8355327C621DE000C5E12 = {
+			isa = PBXGroup;
+			children = (
+				D5C8355E27C621DE000C5E12 /* SlackHuddle */,
+				D5C8356F27C621DF000C5E12 /* SlackHuddleTests */,
+				D5C8357927C621DF000C5E12 /* SlackHuddleUITests */,
+				D5C8355D27C621DE000C5E12 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5C8355D27C621DE000C5E12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5C8355C27C621DE000C5E12 /* SlackHuddle.app */,
+				D5C8356C27C621DF000C5E12 /* SlackHuddleTests.xctest */,
+				D5C8357627C621DF000C5E12 /* SlackHuddleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5C8355E27C621DE000C5E12 /* SlackHuddle */ = {
+			isa = PBXGroup;
+			children = (
+				D5C8355F27C621DE000C5E12 /* SlackHuddleApp.swift */,
+				D5C8359A27C64DEB000C5E12 /* View */,
+				D5C8359B27C64F49000C5E12 /* Model */,
+				D5C8359127C62AF5000C5E12 /* TokenProvider.swift */,
+				D5C8359327C63A4B000C5E12 /* HalfSheetModal.swift */,
+				D5C8356327C621DF000C5E12 /* Assets.xcassets */,
+				D5C8356527C621DF000C5E12 /* Preview Content */,
+			);
+			path = SlackHuddle;
+			sourceTree = "<group>";
+		};
+		D5C8356527C621DF000C5E12 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D5C8356627C621DF000C5E12 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D5C8356F27C621DF000C5E12 /* SlackHuddleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5C8357027C621DF000C5E12 /* SlackHuddleTests.swift */,
+			);
+			path = SlackHuddleTests;
+			sourceTree = "<group>";
+		};
+		D5C8357927C621DF000C5E12 /* SlackHuddleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D5C8357A27C621DF000C5E12 /* SlackHuddleUITests.swift */,
+				D5C8357C27C621DF000C5E12 /* SlackHuddleUITestsLaunchTests.swift */,
+			);
+			path = SlackHuddleUITests;
+			sourceTree = "<group>";
+		};
+		D5C8359A27C64DEB000C5E12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D5C8358927C62231000C5E12 /* ContactListView.swift */,
+				D5C8358A27C62231000C5E12 /* SlackChatView.swift */,
+				D5C8358D27C6223A000C5E12 /* ContactListCell.swift */,
+				D5C8359C27C77FE0000C5E12 /* SheetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D5C8359B27C64F49000C5E12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5C8358F27C62240000C5E12 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5C8355B27C621DE000C5E12 /* SlackHuddle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5C8358027C621DF000C5E12 /* Build configuration list for PBXNativeTarget "SlackHuddle" */;
+			buildPhases = (
+				D5C8355827C621DE000C5E12 /* Sources */,
+				D5C8355927C621DE000C5E12 /* Frameworks */,
+				D5C8355A27C621DE000C5E12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SlackHuddle;
+			packageProductDependencies = (
+				D5C8359627C63BCC000C5E12 /* HMSSDK */,
+			);
+			productName = SlackHuddle;
+			productReference = D5C8355C27C621DE000C5E12 /* SlackHuddle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5C8356B27C621DF000C5E12 /* SlackHuddleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5C8358327C621DF000C5E12 /* Build configuration list for PBXNativeTarget "SlackHuddleTests" */;
+			buildPhases = (
+				D5C8356827C621DF000C5E12 /* Sources */,
+				D5C8356927C621DF000C5E12 /* Frameworks */,
+				D5C8356A27C621DF000C5E12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5C8356E27C621DF000C5E12 /* PBXTargetDependency */,
+			);
+			name = SlackHuddleTests;
+			productName = SlackHuddleTests;
+			productReference = D5C8356C27C621DF000C5E12 /* SlackHuddleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D5C8357527C621DF000C5E12 /* SlackHuddleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5C8358627C621DF000C5E12 /* Build configuration list for PBXNativeTarget "SlackHuddleUITests" */;
+			buildPhases = (
+				D5C8357227C621DF000C5E12 /* Sources */,
+				D5C8357327C621DF000C5E12 /* Frameworks */,
+				D5C8357427C621DF000C5E12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5C8357827C621DF000C5E12 /* PBXTargetDependency */,
+			);
+			name = SlackHuddleUITests;
+			productName = SlackHuddleUITests;
+			productReference = D5C8357627C621DF000C5E12 /* SlackHuddleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5C8355427C621DE000C5E12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					D5C8355B27C621DE000C5E12 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					D5C8356B27C621DF000C5E12 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = D5C8355B27C621DE000C5E12;
+					};
+					D5C8357527C621DF000C5E12 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = D5C8355B27C621DE000C5E12;
+					};
+				};
+			};
+			buildConfigurationList = D5C8355727C621DE000C5E12 /* Build configuration list for PBXProject "SlackHuddle" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5C8355327C621DE000C5E12;
+			packageReferences = (
+				D5C8359527C63BCC000C5E12 /* XCRemoteSwiftPackageReference "100ms-ios-sdk" */,
+			);
+			productRefGroup = D5C8355D27C621DE000C5E12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5C8355B27C621DE000C5E12 /* SlackHuddle */,
+				D5C8356B27C621DF000C5E12 /* SlackHuddleTests */,
+				D5C8357527C621DF000C5E12 /* SlackHuddleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5C8355A27C621DE000C5E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C8356727C621DF000C5E12 /* Preview Assets.xcassets in Resources */,
+				D5C8356427C621DF000C5E12 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C8356A27C621DF000C5E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C8357427C621DF000C5E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5C8355827C621DE000C5E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C8359427C63A4B000C5E12 /* HalfSheetModal.swift in Sources */,
+				D5C8358B27C62231000C5E12 /* ContactListView.swift in Sources */,
+				D5C8358E27C6223A000C5E12 /* ContactListCell.swift in Sources */,
+				D5C8358C27C62231000C5E12 /* SlackChatView.swift in Sources */,
+				D5C8359027C62240000C5E12 /* UserModel.swift in Sources */,
+				D5C8359227C62AF5000C5E12 /* TokenProvider.swift in Sources */,
+				D5C8359D27C77FE0000C5E12 /* SheetView.swift in Sources */,
+				D5C8356027C621DE000C5E12 /* SlackHuddleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C8356827C621DF000C5E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C8357127C621DF000C5E12 /* SlackHuddleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5C8357227C621DF000C5E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C8357B27C621DF000C5E12 /* SlackHuddleUITests.swift in Sources */,
+				D5C8357D27C621DF000C5E12 /* SlackHuddleUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5C8356E27C621DF000C5E12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5C8355B27C621DE000C5E12 /* SlackHuddle */;
+			targetProxy = D5C8356D27C621DF000C5E12 /* PBXContainerItemProxy */;
+		};
+		D5C8357827C621DF000C5E12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5C8355B27C621DE000C5E12 /* SlackHuddle */;
+			targetProxy = D5C8357727C621DF000C5E12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D5C8357E27C621DF000C5E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5C8357F27C621DF000C5E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5C8358127C621DF000C5E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SlackHuddle/Preview Content\"";
+				DEVELOPMENT_TEAM = 46G4AVJ357;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow access to microphone in order to enable call";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.archidev.SlackHuddle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5C8358227C621DF000C5E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SlackHuddle/Preview Content\"";
+				DEVELOPMENT_TEAM = 46G4AVJ357;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Allow access to microphone in order to enable call";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.archidev.SlackHuddle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D5C8358427C621DF000C5E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46G4AVJ357;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.archidev.SlackHuddleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlackHuddle.app/SlackHuddle";
+			};
+			name = Debug;
+		};
+		D5C8358527C621DF000C5E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46G4AVJ357;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.archidev.SlackHuddleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SlackHuddle.app/SlackHuddle";
+			};
+			name = Release;
+		};
+		D5C8358727C621DF000C5E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46G4AVJ357;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.archidev.SlackHuddleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SlackHuddle;
+			};
+			name = Debug;
+		};
+		D5C8358827C621DF000C5E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46G4AVJ357;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.archidev.SlackHuddleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SlackHuddle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5C8355727C621DE000C5E12 /* Build configuration list for PBXProject "SlackHuddle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C8357E27C621DF000C5E12 /* Debug */,
+				D5C8357F27C621DF000C5E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C8358027C621DF000C5E12 /* Build configuration list for PBXNativeTarget "SlackHuddle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C8358127C621DF000C5E12 /* Debug */,
+				D5C8358227C621DF000C5E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C8358327C621DF000C5E12 /* Build configuration list for PBXNativeTarget "SlackHuddleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C8358427C621DF000C5E12 /* Debug */,
+				D5C8358527C621DF000C5E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C8358627C621DF000C5E12 /* Build configuration list for PBXNativeTarget "SlackHuddleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C8358727C621DF000C5E12 /* Debug */,
+				D5C8358827C621DF000C5E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D5C8359527C63BCC000C5E12 /* XCRemoteSwiftPackageReference "100ms-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/100mslive/100ms-ios-sdk";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D5C8359627C63BCC000C5E12 /* HMSSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5C8359527C63BCC000C5E12 /* XCRemoteSwiftPackageReference "100ms-ios-sdk" */;
+			productName = HMSSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D5C8355427C621DE000C5E12 /* Project object */;
+}
