@@ -34,8 +34,17 @@ struct SlackChatView: View {
         self.hmsSDK.localPeer?.localAudioTrack()?.setMute(isMuted)
         isMuted.toggle()
     }
-
     
+    func leaveRoom() {
+        hmsSDK.leave { didEnd, error in
+            if didEnd {
+                self.presentationMode.wrappedValue.dismiss()
+            } else {
+                
+            }
+        }
+    }
+
     func endRoom() {
         hmsSDK.endRoom(lock: false, reason: "Meeting has ended") { didEnd, error in
             if didEnd {
@@ -62,11 +71,11 @@ struct SlackChatView: View {
     
     
     func joinRoom() {
-        tokenProvider.getToken(for: "6215f1897a9d04e28c60b260", role: "speaker", completion: {
+        tokenProvider.getToken(for: "6215f1897a9d04e28c60b260", role: "speaker") {
             token, error in
-            let config = HMSConfig(authToken: token!)
+            let config = HMSConfig(userName: "Mayank", authToken: token!)
             hmsSDK.join(config: config, delegate: self.viewModel)
-        })
+        }
     }
 
     
@@ -85,7 +94,7 @@ struct SlackChatView: View {
             }
         }).buttonStyle(PlainButtonStyle()).frame(width: 25, height: 25, alignment: .center))
         .halfSheet(showSheet: $homeModel.showSheet) {
-            SheetView()
+            SheetView(user: user!, isMute: $isMuted)
                 .environmentObject(homeModel)
             
             

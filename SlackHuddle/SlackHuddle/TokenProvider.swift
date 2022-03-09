@@ -33,7 +33,7 @@ class TokenProvider {
 
 		URLSession.shared.dataTask(with: tokenRequest) { [weak self] data, response, error in
 			DispatchQueue.main.async {
-				self?.process(data: data, error: error, completion: completion)
+				self?.process(data,error,completion)
 			}
 		}.resume()
 	}
@@ -58,7 +58,7 @@ class TokenProvider {
 		return request
 	}
 	
-	private func process(data: Data?, error: Error?, completion: (String?, Error?) -> Void) {
+	private func process(_ data: Data?,_ error: Error?,_ completion: (String?, Error?) -> Void) {
 		guard error == nil, let data = data else {
 			completion(nil, TokenProviderError.networkError(reason: error?.localizedDescription))
 			return

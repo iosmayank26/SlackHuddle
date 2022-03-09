@@ -15,33 +15,78 @@ class HomeModel: ObservableObject{
     @Published var tapped = false
 }
 
-
 struct SheetView: View{
-    
+    var user: UserModel
+    @Binding var isMute : Bool
     @EnvironmentObject var homeModel: HomeModel
     
     var body: some View{
         
         ZStack{
-            homeModel.tapped ? Color.blue : Color.orange
+            Color.gray
             
             VStack{
-                
-                Text(homeModel.tapped ? "Tap Me Again" : "Tap Me")
-                    .font(.title.bold())
-                    .foregroundColor(.white)
-                    .onTapGesture {
-                        homeModel.tapped.toggle()
-                    }
-                
-                Button {
-                    homeModel.showSheet.toggle()
-                } label: {
-                    Text("End Room")
-                        .foregroundColor(.white)
+                HStack {
+                    Image(user.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 80, height: 80, alignment: .leading)
+                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2).foregroundColor(Color.white))
+                        .padding()
+                    Image("Kshitij")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 80, height: 80, alignment: .trailing)
+                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2).foregroundColor(Color.white))
+                        .padding()
                 }
-                .padding(10)
-
+                HStack {
+                    Button {
+                        isMute.toggle()
+                    } label: {
+                        Image(systemName: isMute ? "mic" : "mic.slash")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18, alignment: .center)
+                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .circular))
+                            .foregroundColor(.black)
+                            .padding()
+                    }
+                    .frame(width: 35, height: 35, alignment: .center)
+                    .background(Color.white)
+                    .clipShape(Circle())
+                    
+                    Button {
+                        homeModel.showSheet.toggle()
+                    } label: {
+                        Image(systemName: "person.badge.plus")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18, alignment: .center)
+                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .circular))
+                            .foregroundColor(.black)
+                            .padding()
+                    }
+                    .frame(width: 35, height: 35, alignment: .center)
+                    .background(Color.white)
+                    .clipShape(Circle())
+                    
+                    Button {
+                        homeModel.showSheet.toggle()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18, alignment: .center)
+                            .foregroundColor(.white)
+                            .padding()
+                    }
+                    .frame(width: 35, height: 35, alignment: .center)
+                    .background(Color.red)
+                    .clipShape(Circle())
+                }
             }
         }
         .ignoresSafeArea()
