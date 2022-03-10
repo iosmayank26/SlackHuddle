@@ -30,10 +30,6 @@ struct SlackChatView: View {
         
     }
 
-    func muteMic() {
-        self.hmsSDK.localPeer?.localAudioTrack()?.setMute(isMuted)
-        isMuted.toggle()
-    }
     
     func leaveRoom() {
         hmsSDK.leave { didEnd, error in
@@ -94,13 +90,13 @@ struct SlackChatView: View {
             }
         }).buttonStyle(PlainButtonStyle()).frame(width: 25, height: 25, alignment: .center))
         .halfSheet(showSheet: $homeModel.showSheet) {
-            SheetView(user: user!, isMute: $isMuted)
+            SheetView(hmsSDK: hmsSDK, user: user!, isMute: $isMuted)
                 .environmentObject(homeModel)
             
             
         } onEnd: {
-            endRoom()
-            print("Dismissed")
+            leaveRoom()
+            print("Left room")
         }
     }
     

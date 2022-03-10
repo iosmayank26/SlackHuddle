@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import HMSSDK
 
 
 
@@ -16,6 +17,7 @@ class HomeModel: ObservableObject{
 }
 
 struct SheetView: View{
+    var hmsSDK: HMSSDK
     var user: UserModel
     @Binding var isMute : Bool
     @EnvironmentObject var homeModel: HomeModel
@@ -34,7 +36,7 @@ struct SheetView: View{
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2).foregroundColor(Color.white))
                         .padding()
-                    Image("Kshitij")
+                    Image("Mayank")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 80, height: 80, alignment: .trailing)
@@ -44,7 +46,7 @@ struct SheetView: View{
                 }
                 HStack {
                     Button {
-                        isMute.toggle()
+                        muteMic()
                     } label: {
                         Image(systemName: isMute ? "mic" : "mic.slash")
                             .resizable()
@@ -90,5 +92,11 @@ struct SheetView: View{
             }
         }
         .ignoresSafeArea()
+    }
+    
+    
+    func muteMic() {
+        self.hmsSDK.localPeer?.localAudioTrack()?.setMute(isMute)
+        isMute.toggle()
     }
 }
