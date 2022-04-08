@@ -19,7 +19,9 @@ class HomeModel: ObservableObject{
 struct SheetView: View{
     var hmsSDK: HMSSDK
     var user: UserModel
-    @Binding var isMute : Bool
+    @State var isMute : Bool = false
+    @Binding var kritikaIsActive: Bool
+    @Binding var mayankIsActive: Bool
     @EnvironmentObject var homeModel: HomeModel
     
     var body: some View{
@@ -34,21 +36,21 @@ struct SheetView: View{
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 80, height: 80, alignment: .leading)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2).foregroundColor(Color.white))
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2).foregroundColor(kritikaIsActive ? Color.blue : Color.white))
                         .padding()
                     Image("Mayank")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 80, height: 80, alignment: .trailing)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2).foregroundColor(Color.white))
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2).foregroundColor(mayankIsActive ? Color.blue : Color.white))
                         .padding()
                 }
                 HStack {
                     Button {
-                        muteMic()
+                        micButtonTapped()
                     } label: {
-                        Image(systemName: isMute ? "mic" : "mic.slash")
+                        Image(systemName: isMute ? "mic.slash" : "mic")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 18, height: 18, alignment: .center)
@@ -95,8 +97,8 @@ struct SheetView: View{
     }
     
     
-    func muteMic() {
-        self.hmsSDK.localPeer?.localAudioTrack()?.setMute(isMute)
+    func micButtonTapped() {
         isMute.toggle()
+        self.hmsSDK.localPeer?.localAudioTrack()?.setMute(isMute)
     }
 }

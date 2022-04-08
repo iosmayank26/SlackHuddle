@@ -21,15 +21,44 @@ struct SlackChatView: View {
     @State var isMuted: Bool = false
     @State var user: UserModel?
     @State var chatText: String = ""
+    @State var kritikaIsActive: Bool = false
+    @State var mayankIsActive: Bool = false
     @StateObject var homeModel = HomeModel()
     
     var body: some View {
         Spacer()
         audioRoomOptions
             .padding(.bottom, 10)
+            .onChange(of: self.viewModel.speaker) { newValue in
+                if newValue.count == 0 {
+                    mayankIsActive = false
+                    kritikaIsActive = false
+                } else if newValue.count == 1 {
+                    if newValue.first?.peer.name == "Mayank" {
+                        debugPrint("Mayank")
+                        mayankIsActive = true
+                        kritikaIsActive = false
+                    } else {
+                        debugPrint("Kritika")
+                        kritikaIsActive = true
+                        mayankIsActive = false
+                    }
+                } else {
+                    newValue.forEach({ speaker in
+                        if speaker.peer.name == "Mayank" {
+                            debugPrint("Mayank")
+                            mayankIsActive = true
+                        } else if speaker.peer.name == "Kritika" {
+                            debugPrint("Kritika")
+                            kritikaIsActive = true
+                        }
+                    })
+                }
+                
+            }
         
     }
-
+    
     
     func leaveRoom() {
         hmsSDK.leave { didEnd, error in
@@ -40,7 +69,7 @@ struct SlackChatView: View {
             }
         }
     }
-
+    
     func endRoom() {
         hmsSDK.endRoom(lock: false, reason: "Meeting has ended") { didEnd, error in
             if didEnd {
@@ -63,6 +92,8 @@ struct SlackChatView: View {
             track in
             self.friendTrack = track
         }
+        
+        debugPrint("Peer ID \(self.viewModel.speaker.first)")
     }
     
     
@@ -73,14 +104,14 @@ struct SlackChatView: View {
             hmsSDK.join(config: config, delegate: self.viewModel)
         }
     }
-
+    
     
     var audioRoomOptions: some View {
         ZStack(alignment: .bottom){
             chatBottomBar
                 .background(Color(.systemBackground).ignoresSafeArea())
         }
-
+        
         .navigationBarTitle(user?.name ?? "", displayMode: .inline).navigationBarItems(trailing: Button(action: {homeModel.showSheet.toggle()
             joinRoom()
             listen()
@@ -90,7 +121,7 @@ struct SlackChatView: View {
             }
         }).buttonStyle(PlainButtonStyle()).frame(width: 25, height: 25, alignment: .center))
         .halfSheet(showSheet: $homeModel.showSheet) {
-            SheetView(hmsSDK: hmsSDK, user: user!, isMute: $isMuted)
+            SheetView(hmsSDK: hmsSDK, user: user!, kritikaIsActive: $kritikaIsActive, mayankIsActive: $mayankIsActive)
                 .environmentObject(homeModel)
             
             
@@ -126,7 +157,7 @@ struct SlackChatView: View {
         .padding(.horizontal)
         .padding(.vertical, 8)
     }
-
+    
     
 }
 
@@ -149,6 +180,7 @@ extension SlackChatView {
         
         @Published var addAudioView: ((_ audioView: HMSAudioTrack) -> ())?
         @Published var removeAudioView: ((_ audioView: HMSAudioTrack) -> ())?
+        @Published var speaker = Set<HMSSpeaker>()
         
         func on(join room: HMSRoom) {
             
@@ -186,7 +218,7 @@ extension SlackChatView {
         }
         
         func on(updated speakers: [HMSSpeaker]) {
-            
+            self.speaker = Set(speakers.map {$0})
         }
         
         func onReconnecting() {
